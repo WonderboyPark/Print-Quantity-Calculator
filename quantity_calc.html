@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap CSS -->
+		<link href="./bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			#copyTotal {
+				text-align: center;
+				font-size: 75px;
+			}
+			.card {background-color: #ebebeb;}
+			table {text-align: center;}
+			.badge {margin: 6px;}
+		</style>
+		<title>Hello Press Operator</title>
+	</head>
+	<body>
+		<script src="./jquery-3.5.1.js"></script>
+    	<script src="./script.js"></script>
+
+		<nav class="navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Dixie Labels HP Frames Calculator 2.0</a>
+			</div>
+		</nav>
+		<div class="container">
+			<!-- Content here -->
+			<br>
+			<p class="display-6">
+				Select the overage percentage for the job. Enter the items per frame information. Enter the item quantity on ticket. Hit enter.
+			</p>
+			<hr>
+			<div class="row">
+				<div class="col-4">
+					<h4>Overage Percentage</h4>
+					<div id="overageSelector" class="btn-group btn-group-lg" role="group" aria-label="Overage Percentage Button Group">
+						
+						<input type="radio" class="btn-check" name="percentageButtonGrp" id="0_percent" autocomplete="off" value="0" checked>
+						<label class="btn  btn-outline-secondary" for="0_percent">0%</label>
+						<input type="radio" class="btn-check" name="percentageButtonGrp" id="5_percent" value="5"  autocomplete="off">
+						<label class="btn btn-outline-secondary" for="5_percent">5%</label>
+						<input type="radio" class="btn-check" name="percentageButtonGrp" id="10_percent" value="10" autocomplete="off">
+						<label class="btn btn-outline-secondary" for="10_percent">10%</label>
+						<input type="radio" class="btn-check" name="percentageButtonGrp" id="15_percent" value="15" autocomplete="off">
+						<label class="btn btn-outline-secondary" for="15_percent">15%</label>
+						
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="row">
+						<h4>Items Per Frame</h4>
+						<div class="col-3">
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control items-across" id="floatingInput" placeholder="" required="">
+								<label for="floatingInput">Across</label>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control items-down" id="floatingInput" placeholder="" required="">
+								<label for="floatingInput">Down</label>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-floating mb-3">
+								<input type="number" class="form-control total-items" id="floatingInput" placeholder="" readonly="">
+								<label for="floatingInput">Total</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div>
+						<h4>Item Quantity</h4>
+						<input type="number" class="form-control item-quantity" id="floatingInput" placeholder="">
+					</div>
+				</div>
+				
+			</div>
+			<hr>
+			<div class="row" id="itemTotalContainer" style="visibility: hidden;">
+				<div class="col-4">
+					<div >
+						
+						<div class="card" style="align-items: center">
+							<div class="card-body">
+								<h1 id="copyTotal"></h1>
+								<h4 style="text-align: center;">Copies to be printed</h4>
+								<div class="row">
+									<div class="col-sm">
+									</div>
+									<div class="col-sm d-flex justify-content-center">
+										<span id="frameItemsPill" class="badge bg-secondary"></span>
+										<span  class="badge bg-secondary">Qty Added: <span id="addedItemsPill"></span></span>
+										<span id="jobLengthPill" class="badge bg-secondary"></span>
+									</div>
+									<div class="col-sm">
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div style="align-items: right" class="clearfix">
+							<button id="addItemBtn" type="button" class="btn btn-success float-start">Add Item</button>
+							<button id="clearFormBtn" type="button" class="btn btn-danger float-end">Clear Form</button>
+						</div>
+					</div>
+					<div  id="alertContainer" style="visibility: hidden;">
+						<div class="alert alert-danger" style="align-items: center" role="alert">
+							<h1 id="itemAlert">This seems like a lot of overage. This number could be smaller.</h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-8">
+					<div class="row">
+						<div class="clearfix">
+							<h2 id="totalMeterContainer" class="float-start"></h2>
+							<button id="clearItemsBtn" type="button" class="btn btn-danger float-end">Clear Items</button>
+						</div>
+					</div>
+					<!-- Table for items -->
+					<table class="table table-striped" id="itemsTable">
+						<thead>
+							<tr>
+								<th scope="col">Item #</th>
+								<th scope="col">Qty</th>
+								<th scope="col">Overage</th>
+								<th scope="col">Total Qty</th>
+								<th scope="col">Total Copies</th>
+								<th scope="col">Length</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				
+			</div>
+			
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	</body>
+</html>
